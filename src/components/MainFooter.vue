@@ -2,8 +2,8 @@
     <footer class="row">
         <div class="footer-content column">
             <div class="logos row">
-                <img src="../assets/logos/linkedin-fill-white.png" alt="logo">
-                <img src="../assets/logos/github-white.png" alt="logo">
+                <a href="https://www.linkedin.com/in/clementduvivier/" target="_blank"><img src="../assets/logos/linkedin-fill-white.png" alt="logo"></a>
+                <a href="https://github.com/ClemOurs" target="_blank"><img src="../assets/logos/github-white.png" alt="logo"></a>
                 <img src="../assets/logos/abattu.png" alt="logo">
             </div>
             <p id="copyrights">© 2022 | Clément Duvivier | All rights reserved.</p>
@@ -40,9 +40,7 @@
         }
     }
     .footer-content {
-        p {
-            padding-left: 15px;
-        }
+        gap: 10px;
         a, p {
             font-size: 12px;
             color: var(--grey);
