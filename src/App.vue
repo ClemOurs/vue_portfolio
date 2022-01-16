@@ -120,6 +120,7 @@ export default {
     z-index: 1;
     position: relative;
     width: 100%;
+    height: auto;
     background-color: var(--bgApp);
     -webkit-font-smoothing: antialiased;
     margin-bottom: 200px;
