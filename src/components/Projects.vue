@@ -50,8 +50,8 @@
                     },
                     {
                         name: 'Jadoo',
-                        subtitle: 'SCHOOL YEAR PROJECT',
-                        description: 'the goal of this project was to make us learn the basics of development, on a subject of our choice.',
+                        subtitle: 'SASS PROJECT',
+                        description: 'the goal of this project was to make us learn the basics of sass, with a template to reproduce.',
                         languages: [
                             require('@/assets/tech/html.png'), 
                             require('@/assets/tech/css.png'), 
@@ -67,8 +67,8 @@
                     },
                     {
                         name: 'Ping Passion',
-                        subtitle: 'SCHOOL YEAR PROJECT',
-                        description: 'the goal of this project was to make us learn the basics of development, on a subject of our choice.',
+                        subtitle: 'WORDPRESS PROJECT',
+                        description: 'the goal of this project was to make us learn the basics of wordpress.',
                         languages: [
                             require('@/assets/tech/html.png'), 
                             require('@/assets/tech/css.png'), 
