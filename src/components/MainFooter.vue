@@ -1,5 +1,5 @@
 <template>
-    <footer class="row">
+    <footer class="footer row">
         <div class="footer-content column">
             <div class="logos row">
                 <a href="https://www.linkedin.com/in/clementduvivier/" target="_blank"><img src="../assets/logos/linkedin-fill-white.png" alt="logo"></a>
@@ -27,10 +27,10 @@
         position: fixed;
         bottom: 0;
         width: 100%;
+        height: fit-content;
         align-items: center;
         justify-content: space-around;
         background-color: var(--bgFooter);
-        height: 200px;
         .links, .logos {
             gap: 20px;
         }
@@ -54,6 +54,11 @@
         img {
             width: 30px;
             height: 30px;
+        }
+    }
+    @media screen and (max-width: 900px) {
+        .footer {
+            flex-direction: column;
         }
     }
 </style>

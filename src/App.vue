@@ -256,7 +256,7 @@ export default {
     .nav {
       padding: 0;
       justify-content: unset;
-      margin-bottom: 80px;
+      margin-bottom: 20px;
     }
   }
 </style>

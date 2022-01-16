@@ -106,4 +106,9 @@ export default {
         width: 49px;
         height: 69px;
     }
+    @media screen and (max-width: 750px) {
+        .skills-page {
+            width: 95%;
+        }
+    }
 </style>

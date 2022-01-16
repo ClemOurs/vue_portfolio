@@ -96,4 +96,13 @@
             }
         }
     }
+    @media screen and (max-width: 750px) {
+        .reach {
+            width: 90%;
+        }
+        .container-info-socials {
+            padding: 1rem;
+            width: 90%;
+        }
+    }
 </style>

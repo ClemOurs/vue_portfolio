@@ -178,6 +178,7 @@ export default {
     }
     @media screen and (max-width: 900px) {
         .header-container {
+            gap: 20px;
             width: 100%;
             h1 {
                 font-size: 30px;
