@@ -2,13 +2,23 @@
   <div class="app">
     <header class="row center nav">
       <div class="container-img center-total">
-          <img id="header-memoji" src="@/assets/memoji/mamoji_1.png" alt="memoji">
+          <img id="header-memoji" src="@/assets/memoji/memoji_1.png" alt="memoji">
       </div>
-      <nav class="row buttons">
+      <div v-show="!mobile" class="row buttons">
         <router-link v-for="link in links" :key="link.id" @click="changeStatut(link.id)" class="button-nav center-total" :class="{active: link.active}" :to="link.name">
           {{ link.name }}
         </router-link>
-      </nav>
+      </div>
+      <div class="burger">
+        <img @click="openMobileMenu" v-show="mobile" :class="{ 'menu-active' : mobileNav }" src="@/assets/menu-burger.png" alt="menu">
+      </div>
+      <transition>
+        <div v-show="mobileNav" class="mb-nav column">
+          <router-link v-for="link in links" :key="link.id" @click="changeStatut(link.id)" class="button-nav center-total" :class="{active: link.active}" :to="link.name">
+            {{ link.name }}
+          </router-link>
+        </div>
+      </transition>
     </header>
     <Home  v-if="activePage == 0"/>
     <Skills v-if="activePage == 1" />
@@ -32,6 +42,11 @@ export default {
   components: { Home,MainFooter,Skills,Projects,Experience,Contact },
   data() {
     return {
+        scrolledNav: null,
+        mobile: null,
+        mobileNav: null,
+        windowWidth: null,
+
         links: [
           { id: 0, path:"/", name: "Home", active: true },
           { id: 1, path:"/skills", name: "Skills", active: false },
@@ -42,6 +57,11 @@ export default {
         activePage: 0,
     };
   },
+  created() {
+    window.addEventListener('resize', this.checkScreen)
+    this.checkScreen()
+  },
+
   methods: {
     changeStatut(id) {
       this.links.forEach(route => {
@@ -52,7 +72,20 @@ export default {
           route.active = false
         }
       });
-    }
+    },
+    openMobileMenu() {
+      this.mobileNav = !this.mobileNav
+    },
+    checkScreen() {
+      this.windowWidth = window.innerWidth
+      if (this.windowWidth <= 750) {
+        this.mobile = true
+        return
+      }
+      this.mobile = false
+      this.mobileNav = false
+      return
+    },
   },
 }
 
@@ -87,7 +120,6 @@ export default {
     z-index: 1;
     position: relative;
     width: 100%;
-    height: 100vh;
     background-color: var(--bgApp);
     -webkit-font-smoothing: antialiased;
     margin-bottom: 200px;
@@ -106,9 +138,12 @@ export default {
     a,p {
       font-size: 14px;
     }
-    &:hover a{
+    &:hover {
         transition: ease 0.3s;
-        color: var(--blue);
+        transform: scale(1.05);
+        a {
+          color: var(--blue);
+        }
     }
   }
   .active {
@@ -136,10 +171,39 @@ export default {
     display: flex;
     flex-direction: column;
   }
+  .burger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    cursor: pointer;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .menu-active {
+    transition: ease 0.3s all;
+    transform: rotate(-90deg);
+  }
+  .mb-nav {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    z-index: 1;
+    background-color: var(--bgFooter);
+    router-link {
+      padding: 2rem;
+      font-size: 18px;
+      width: 100%;
+      border-radius: 0;
+      color: var(--white);
+    }
+  }
   .nav {
+    padding: 2rem;
     justify-content: center;
     justify-content: space-evenly;
-    margin-bottom: 40px;
   }
   .buttons {
     padding: 0.5rem;
@@ -177,6 +241,18 @@ export default {
     #header-memoji {
         width: 36px;
         height: 46px;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .nav {
+      padding: 0;
+      justify-content: unset;
+      margin-bottom: 80px;
+    }
+    .container-img {
+      position: fixed;
+      top: 1%;
+      left: 2%;
     }
   }
 </style>
