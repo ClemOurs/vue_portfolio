@@ -7,35 +7,55 @@
         </div>
         <div class="txt center-total">
             <p>I’m currently studying at IIM Digital School in Nanterre, to become a fullstack developper.</p>
-            <p id="search">Right now, I'm looking for an internship for a period of 3 months from May to August as well as a work-study program for my third year.</p>
+            <p>Right now, I'm looking for an internship for a period of 3 months from May to August as well as a work-study program for my third year.</p>
             <div class="margin">
                 <img class="arrow" src="@/assets/logos/arrow-down.png" alt="arrow">
             </div>
             <div class="button row center-total">
                 <p>Learn more </p>
-                <a href="#">about me.</a>
+                <a href="#" target="_blank">about me.</a>
             </div>
         </div>
     </div>
-    <section class="journey">
+    <section class="about-me">
         <h2 class="gradient">My journey.</h2>
         <div class="txt">
             <p>Passionate about many different fields I had previously started studying networks and telecoms, however I soon realized that it was only going to remain a distant passion...</p>
             <p>So I decided to go back to IIM, a school that I had already spotted at the end of my high school period.</p>
             <p>Currently in my second year of bachelor and I’m studying web development !</p>
-            <div class="center-total">
-                <img class="arrow" src="@/assets/logos/arrow-down.png" alt="arrow">
-            </div>
-            <div class="button learn-more center-total">
-                <a href="#">learn more about my experience</a>
-            </div>
         </div>
+        <h2 class="gradient">My passions.</h2>
+        <ul class="cards flex-wrap">
+            <li class="card" v-for="passion in passions" :key="passion.id">
+                <img v-bind:src="passion.image" alt="passion"/>
+                <div class="passion center-total">
+                    <h5 class="title-passion">{{passion.name}}.</h5>
+                </div>
+            </li>
+        </ul>
     </section>
 </template>
+
 <script>
+export default {
+    data() {
+        return {
+            passions: [
+                {id: 0, name: "Video Games", image: require("@/assets/passions/videogame.jpeg")},
+                {id: 1, name: "Cinema", image: require("@/assets/passions/cinema.jpeg")},
+                {id: 2, name: "Photography", image: require("@/assets/passions/photography.jpeg")},
+                {id: 3, name: "Code", image: require("@/assets/passions/code.jpeg")},
+                {id: 4, name: "Trips", image: require("@/assets/passions/trip.jpeg")},
+                {id: 5, name: "Music", image: require("@/assets/passions/music.jpeg")},
+            ]
+        }
+    },
+}
 </script>
+
 <style lang="scss">
     .header-container {
+        padding: 1rem;
         background-image: url("../assets/bg_header.png");
         background-repeat: no-repeat;
         background-position: fixed;
@@ -47,13 +67,11 @@
             gap: 10px;
         }
         .txt {
-            width: 80%;
+            padding: 1rem;
+            width: 30%;
+            text-align: justify;
             flex-direction: column;
-            #search {
-                text-align: justify;
-                width: 60%;
-                margin-top: 30px;
-            }
+            gap: 19px;
             a:hover {
                 color: var(--blue);
                 text-decoration: underline;
@@ -71,7 +89,6 @@
         font-size: 60px;
     }
     .row {
-        padding: 1rem;
         display: flex;
         flex-direction: row;
         &.center {
@@ -86,27 +103,85 @@
         width: 30px;
         height: 30px;
     }
-    .journey {
+    .about-me {
         margin: 0 auto;
         width: 60%;
         border-radius: 30px 30px 0 0;
         padding: 1rem;
         background-color: var(--bgContainer);
         h2 {
+            display: flex;
+            justify-content: center;
             padding: 10px;
             font-weight: bold;
             margin-bottom: 20px;
         }
         .txt {
             margin: 0 auto;
-            width: 70%;
+            width: 60%;
+            text-align: justify;
             p {
-                font-size: 14px;
+                font-size: 18px;
                 margin-bottom: 30px;
             }
         }
         .learn-more {
             margin-bottom: 75px;
+        }
+    }
+    .cards {
+        padding: 1rem;
+        justify-content: center;
+        gap: 30px;
+        .card {
+            cursor: pointer;
+            position: relative;
+            .passion {
+                transition: 0.3s ease;
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 98%;    
+                background: var(--gradient);
+                border-radius: 10px;
+            }
+            img {
+                border-radius: 10px;
+                width: 350px;
+                height: 200px;
+                &:hover {
+                    opacity: 0.3;
+                    transition: 0.3s;
+                }
+            }
+            &:hover .passion {
+                opacity: 1;
+            }
+        }
+    }
+    .title-passion {
+        color: var(--white);
+        text-transform: lowercase;
+        font-weight: bold;
+    }
+    @media screen and (max-width: 1300px) {
+        .header-container {
+            .txt {
+                width: 70%;
+            }
+        }
+        .about-me {
+            width: 90%;
+        }
+    }
+    @media screen and (max-width: 900px) {
+        .header-container {
+            width: 100%;
+            h1 {
+                font-size: 38px;
+            }
         }
     }
 </style>
