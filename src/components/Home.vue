@@ -69,7 +69,7 @@ export default {
         }
         .txt {
             padding: 1rem;
-            width: 30%;
+            width: 50%;
             text-align: justify;
             flex-direction: column;
             gap: 19px;
@@ -170,7 +170,7 @@ export default {
     @media screen and (max-width: 1300px) {
         .header-container {
             .txt {
-                width: 70%;
+                width: 80%;
             }
         }
         .about-me {
