@@ -1,92 +1,92 @@
 <template>
-    <div class="skills-page center-total">
+    <div class="skills-page column">
         <div class="txt">
-            <p>As I said before, I am currently in my second year of study in web development, so this page is bound to grow.</p>
+            <p class="gradient">As I said before, I am currently in my second year of study in web development, so this page is bound to grow.</p>
         </div>
         <div class="container-skills">
             <h2 class="gradient">Front-end.</h2>
             <div class="skills flex-wrap">
-                <div class="skill center-total">
-                    <img src="@/assets/tech/html.png" alt="skill front">
-                </div>
-                <div class="skill center-total">
-                    <img src="@/assets/tech/css.png" alt="skill front">
-                </div>
-                <div class="skill center-total">
-                    <img src="@/assets/tech/javascript-fill.png" alt="skill front">
-                </div>
-                <div class="skill center-total">
-                    <img src="@/assets/tech/vuejs.png" alt="skill front">
-                </div>
-                <div class="skill center-total">
-                    <img src="@/assets/tech/tailwind.png" alt="skill front">
-                </div>
-                <div class="skill center-total">
-                    <img src="@/assets/tech/sass.png" alt="skill front">
-                </div>
-                <div class="skill center-total">
-                    <img src="@/assets/tech/angular.png" alt="skill front">
+                <div v-for="front in fronts" :key="front" class="skill center-total">
+                    <img v-bind:src="front.image"  alt="skill">
                 </div>
             </div>
         </div>
         <div class="container-skills">
             <h2 class="gradient">Back-end.</h2>
             <div class="skills flex-wrap">
-                <div class="skill center-total">
-                    <img src="@/assets/tech/php.png" alt="skill back">
-                </div>
-                <div class="skill center-total">
-                    <img src="@/assets/tech/mysql.png" alt="skill back">
-                </div>
-                <div class="skill center-total">
-                    <img src="@/assets/tech/symfony.png" alt="skill back">
-                </div>
-                <div class="skill center-total">
-                    <img src="@/assets/tech/laravel.png" alt="skill back">
-                </div>
-                <div class="skill center-total">
-                    <img src="@/assets/tech/python-fill.png" alt="skill back">
-                </div>
-                <div class="skill center-total">
-                    <img src="@/assets/tech/wordpress.png" alt="skill back">
-                </div>
-                <div class="skill center-total">
-                    <img src="@/assets/tech/shopify.png" alt="skill back">
+                <div v-for="back in backs" :key="back" class="skill center-total">
+                    <img v-bind:src="back.image"  alt="skill">
                 </div>
             </div>
         </div>
         <div class="container-skills">
             <h2 class="gradient">Ui design.</h2>
             <div class="skills flex-wrap">
-                <div class="skill center-total">
-                    <img src="@/assets/tech/adobe-xd.png" alt="skill UI">
-                </div>
-                <div class="skill center-total">
-                    <img id="figma-logo" src="@/assets/tech/figma.png" alt="skill UI">
+                <div v-for="ui in uis" :key="ui" class="skill center-total">
+                    <img v-bind:src="ui.image"  alt="skill">
                 </div>
             </div>        
         </div>
     </div>
 </template>
 
+<script>
+export default {
+    name: 'Skills',
+    data() {
+        return {
+            fronts:[
+                {image: require('@/assets/tech/html.png')},
+                {image: require('@/assets/tech/css.png')},
+                {image: require('@/assets/tech/javascript-fill.png')},
+                {image: require('@/assets/tech/vuejs.png')},
+                {image: require('@/assets/tech/tailwind.png')},
+                {image: require('@/assets/tech/sass.png')},
+                {image: require('@/assets/tech/angular.png')}
+            ],
+            backs:[
+                {image: require('@/assets/tech/php.png')},
+                {image: require('@/assets/tech/mysql.png')},
+                {image: require('@/assets/tech/symfony.png')},
+                {image: require('@/assets/tech/laravel.png')},
+                {image: require('@/assets/tech/python-fill.png')},
+                {image: require('@/assets/tech/wordpress.png')},
+                {image: require('@/assets/tech/shopify.png')}
+            ],
+            uis: [
+                {image: require('@/assets/tech/adobe-xd.png')},
+                {image: require('@/assets/tech/figma.png')}
+            ]
+        }
+    },
+}
+</script>
+
 <style lang="scss">
     .skills-page {
-        flex-direction: column;
-        height: 100vh;
+        margin: 0 auto;
+        padding: 1rem;
+        width: 80%;
+        gap: 60px;
         .txt {
-            width: 50%;
-            text-align: justify;
-            margin-bottom: 30px;
+            margin: 0 auto;
+            margin: 30px;
+            p {
+                text-align: center;
+            }
         }
         .skills, h2 {
             margin-bottom: 20px;
         }
     }
+    .container-skills {
+        margin: 0 auto;
+    }
     .skills {
-        width: 500px;
         gap: 28px;
     }
     .skill {
+        cursor: pointer;
         padding: 1rem;
         width: 100px;
         height: 100px;
@@ -95,6 +95,11 @@
         img {
             width: 60px;
             height: auto;
+        }
+        &:hover {
+            transition: ease 0.3s;
+            transform: scale(1.1);
+            box-shadow: 0px 2px 8px 0px #00000040;
         }
     }
     #figma-logo {
