@@ -27,7 +27,7 @@
         position: fixed;
         bottom: 0;
         width: 100%;
-        height: fit-content;
+        height: 200px;
         align-items: center;
         justify-content: space-around;
         background-color: var(--bgFooter);

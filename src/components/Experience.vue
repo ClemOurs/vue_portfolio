@@ -1,16 +1,18 @@
 <template>
-    <div class="txt dd-container column center-total">
-        <p class="gradient">feel free to download my resume right here.</p>
-        <img class="arrow" src="@/assets/logos/arrow-down.png" alt="arrow">
-        <a class="button resume center-total" href="@/assets/mon_cv.pdf" download="cv_clement_duvivier">my resume.</a>
-    </div>
-    <div class="container experiences column">
-        <div v-for="experience in experiences" :key="experience" class="block row">
-            <img class="logo-experience" v-bind:src="experience.logo" alt="logo">
-            <div class="txt-experience column">
-                <p>{{experience.duration}}</p>
-                <h3>{{experience.title}}</h3>
-                <h5>{{experience.name}}</h5>
+    <div class="experience">
+        <div class="txt dd-container column center-total">
+            <p class="gradient">feel free to download my resume right here.</p>
+            <img class="arrow" src="@/assets/logos/arrow-down.png" alt="arrow">
+            <a class="button resume center-total" href="@/assets/mon_cv.pdf" download="cv_clement_duvivier">my resume.</a>
+        </div>
+        <div class="container experiences column">
+            <div v-for="experience in experiences" :key="experience" class="block row">
+                <img class="logo-experience" v-bind:src="experience.logo" alt="logo">
+                <div class="txt-experience column">
+                    <p>{{experience.duration}}</p>
+                    <h3>{{experience.title}}</h3>
+                    <h5>{{experience.name}}</h5>
+                </div>
             </div>
         </div>
     </div>
@@ -57,6 +59,9 @@ export default {
         gap: 15px;
         margin: 35px;
     }
+    .experience {
+        height: 100vh;
+    }
     .experiences {
         align-items: center;
     }
@@ -90,6 +95,11 @@ export default {
             display: flex;
             flex-direction: column;
             text-align: center;
+        }
+    }
+    @media screen and (max-width: 750px){
+        p {
+            font-size: 12px;
         }
     }
 </style>

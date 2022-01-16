@@ -60,6 +60,7 @@ export default {
         background-repeat: no-repeat;
         background-position: fixed;
         background-size: cover;
+        gap: 30px;
         width: 80%;
         height: 60vh;
         margin: 0 auto;
@@ -86,7 +87,7 @@ export default {
         margin-bottom: 30px;
     }
     h1 {
-        font-size: 60px;
+        font-size: 80px;
     }
     .row {
         display: flex;

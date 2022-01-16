@@ -13,9 +13,6 @@
                     <h2>{{project.name}}</h2>
                     <small>{{project.subtitle}}</small>
                     <p>{{project.description}}</p>
-                    <div class="languages flex-wrap">
-                        <img v-for="lang in project.languages" :key="lang" :src="lang" alt="language">
-                    </div>
                 </div>
                 <div class="images">
                     <img v-for="image in project.images" :key="image" :src="image" alt="project image">
@@ -134,8 +131,8 @@
                     align-items: center;
 
                     img {
-                        width: 30px;
-                        height: fit-content;
+                        width: 25px;
+                        height: 30px;
                         margin-right: 15px;
                     }
                 }
@@ -217,12 +214,6 @@
                         font-size: 1.5rem;
                     }
                 }
-            }
-        }
-        .languages {
-            img {
-                width: 30px;
-                height: 30px;
             }
         }
     }
