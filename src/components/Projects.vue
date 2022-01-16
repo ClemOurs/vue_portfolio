@@ -222,7 +222,7 @@
         .languages {
             img {
                 width: 30px;
-                height: auto;
+                height: 30px;
             }
         }
     }
