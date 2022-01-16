@@ -12,7 +12,7 @@
       <div class="burger">
         <img @click="openMobileMenu" v-show="mobile" :class="{ 'menu-active' : mobileNav }" src="@/assets/menu-burger.png" alt="menu">
       </div>
-      <transition>
+      <transition name="mobile-nav">
         <div v-show="mobileNav" class="mb-nav column">
           <router-link v-for="link in links" :key="link.id" @click="changeStatut(link.id)" class="button-nav center-total" :class="{active: link.active}" :to="link.name">
             {{ link.name }}
@@ -200,6 +200,15 @@ export default {
       color: var(--white);
     }
   }
+  .mobile-nav-enter-active, .mobile-nav-leave-active {
+    transition: ease 1.5s;
+  }
+  .mobile-nav-enter-from, .mobile-nav-leave-to {
+    transform: translateY(500px);
+  }
+  .mobile-nav-enter-to {
+    transform: translateY(0px);
+  }
   .nav {
     padding: 2rem;
     justify-content: center;
@@ -248,11 +257,6 @@ export default {
       padding: 0;
       justify-content: unset;
       margin-bottom: 80px;
-    }
-    .container-img {
-      position: fixed;
-      top: 1%;
-      left: 2%;
     }
   }
 </style>
