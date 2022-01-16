@@ -180,7 +180,18 @@ export default {
         .header-container {
             width: 100%;
             h1 {
-                font-size: 38px;
+                font-size: 30px;
+            }
+            .txt {
+                width: 90%;
+            }
+        }
+        .about-me {
+            .gradient {
+                color: #000;
+            }
+            .txt {
+                width: 90%;
             }
         }
     }
