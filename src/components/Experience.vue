@@ -60,7 +60,7 @@ export default {
         margin: 35px;
     }
     .experience {
-        height: 100vh;
+        height: 100vw;
     }
     .experiences {
         align-items: center;
