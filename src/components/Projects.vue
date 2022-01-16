@@ -212,7 +212,17 @@
                         width: 90%;
                     }
                 }
-
+                .content {
+                    h2 {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+        .languages {
+            img {
+                width: 30px;
+                height: auto;
             }
         }
     }
