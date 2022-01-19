@@ -168,7 +168,6 @@
     @media screen and (max-width: 1400px) {
         .container {
             .box {
-                width: 90vw;
                 display: flex;
                 flex-direction: column;
                 text-align: center;
