@@ -169,6 +169,9 @@ export default {
     }
     @media screen and (max-width: 1300px) {
         .header-container {
+            h1 {
+                font-size: 3rem;
+            }
             .txt {
                 width: 80%;
             }
@@ -182,7 +185,7 @@ export default {
             gap: 20px;
             width: 100%;
             h1 {
-                font-size: 30px;
+                font-size: 2rem;
             }
             .txt {
                 width: 90%;

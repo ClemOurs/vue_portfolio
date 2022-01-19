@@ -173,6 +173,7 @@ export default {
     flex-direction: column;
   }
   .burger {
+    z-index: 2;
     position: absolute;
     top: 0;
     right: 0;
@@ -184,12 +185,15 @@ export default {
     }
   }
   .menu-active {
+    padding: 5px;
+    border-radius: 5px;
     transition: ease 0.3s all;
     transform: rotate(-90deg);
+    background: var(--white);
   }
   .mb-nav {
     width: 100%;
-    bottom: 0;
+    top: 0;
     position: fixed;
     z-index: 1;
     background-color: var(--bgFooter);
@@ -202,10 +206,10 @@ export default {
     }
   }
   .mobile-nav-enter-active, .mobile-nav-leave-active {
-    transition: ease 1.5s;
+    transition: ease 1.0s;
   }
   .mobile-nav-enter-from, .mobile-nav-leave-to {
-    transform: translateY(500px);
+    transform: translateY(-400px);
   }
   .mobile-nav-enter-to {
     transform: translateY(0px);

@@ -2,7 +2,7 @@
     <div class="txt dd-container column center-total">
         <p class="gradient">feel free to download my resume right here.</p>
         <img class="arrow" src="@/assets/logos/arrow-down.png" alt="arrow">
-        <a class="button resume center-total" href="@/assets/mon_cv.pdf" download="cv_clement_duvivier">my resume.</a>
+        <a class="button resume center-total" href="@/assets/mon_cv.pdf" download="cv_clement_duvivier.pdf">my resume.</a>
     </div>
     <div class="container experiences column">
         <div v-for="experience in experiences" :key="experience" class="block row">
@@ -78,7 +78,7 @@ export default {
         border-radius: 10px;
         &:hover {
             transition: ease 0.3s;
-            transform: scale(1.2);
+            transform: scale(1.05);
             box-shadow: 0px 2px 8px 0px #00000040;
         }
     }
