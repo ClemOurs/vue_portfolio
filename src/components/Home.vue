@@ -6,7 +6,7 @@
             <p id="city">Paris, France</p>
         </div>
         <div class="txt center-total">
-            <p>I’m currently studying at IIM Digital School in Nanterre, to become a fullstack developper.</p>
+            <p>I’m currently studying at IIM Digital School in Nanterre, to become a fullstack developer.</p>
             <p>Right now, I'm looking for an internship for a period of 3 months from May to August as well as a work-study program for my third year.</p>
             <div class="margin">
                 <img class="arrow" src="@/assets/logos/arrow-down.png" alt="arrow">
